@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:androidPlot="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.androidplot.xy.XYPlot
+        android:id="@+id/myPlot"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+
+        androidPlot:title=""
+        androidPlot:domainTitle=""
+        androidPlot:rangeTitle=""
+        androidPlot:titleTextSize="@dimen/title_font_size"
+        androidPlot:domainTitleTextSize="@dimen/domain_label_font_size"
+        androidPlot:rangeTitleTextSize="@dimen/range_label_font_size"
+        androidPlot:graphMarginTop="10dp"
+        androidPlot:graphMarginLeft="10dp"
+        androidPlot:graphMarginBottom="15dp"
+        androidPlot:graphMarginRight="10dp"
+        androidPlot:legendHeight="25dp"
+        androidPlot:legendAnchor="right_bottom"
+        androidPlot:legendIconHeight="15dp"
+        androidPlot:legendIconWidth="15dp"
+        androidPlot:gridBackgroundColor="#000000"
+        androidPlot:lineLabelRotationBottom="-45" />
+
+</LinearLayout>

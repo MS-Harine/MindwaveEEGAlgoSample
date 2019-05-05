@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/sqTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Signal Quality"/>
+
+    <TextView
+        android:id="@+id/sqText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/sqTitle"
+        android:layout_marginStart="5dp"
+        android:text="--" />
+
+    <TextView
+        android:id="@+id/stateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/sqTitle"
+        android:text="SDK State: " />
+
+    <TextView
+        android:id="@+id/stateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sqTitle"
+        android:layout_toEndOf="@+id/stateTitle"
+        android:layout_marginStart="5dp"
+        android:text="--" />
+
+    <Button
+        android:id="@+id/apTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/attTitle"
+        android:layout_alignParentStart="true"
+        android:enabled="false"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="AP" />
+
+    <Button
+        android:id="@+id/headsetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stateTitle"
+        android:layout_alignParentStart="true"
+        android:textSize="12sp"
+        android:text="Headset" />
+
+    <Button
+        android:id="@+id/cannedDataButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/headsetButton"
+        android:layout_toEndOf="@+id/headsetButton"
+        android:layout_marginStart="10dp"
+        android:textSize="12sp"
+        android:text="Canned Data"/>
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headsetButton"
+        android:layout_alignParentStart="true"
+        android:enabled="false"
+        android:textSize="12sp"
+        android:text="Start" />
+
+    <Button
+        android:id="@+id/stopButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/startButton"
+        android:layout_alignParentStart="true"
+        android:enabled="false"
+        android:textSize="12sp"
+        android:text="Stop" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:id="@+id/meTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/apTitle"
+        android:layout_toEndOf="@+id/apTitle"
+        android:layout_marginStart="5dp"
+        android:enabled="false"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="ME" />
+
+    <TextView
+        android:id="@+id/attTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/setAlgosButton"
+        android:layout_alignParentStart="true"
+        android:text="Attention" />
+
+    <TextView
+        android:id="@+id/attText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/attTitle"
+        android:layout_toRightOf="@+id/attTitle"
+        android:layout_toEndOf="@+id/startButton"
+        android:text="--" />
+
+    <TextView
+        android:id="@+id/medTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/attText"
+        android:layout_centerHorizontal="true"
+        android:text="Meditation: " />
+
+    <TextView
+        android:id="@+id/medText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/medTitle"
+        android:layout_marginStart="10dp"
+        android:layout_alignBottom="@+id/medTitle"
+        android:text="--"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:id="@+id/me2Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/meTitle"
+        android:layout_toEndOf="@+id/meTitle"
+        android:layout_marginStart="5dp"
+        android:enabled="false"
+        android:text="ME2" />
+
+    <include
+        layout="@layout/plot"
+        android:id="@+id/include"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/setIntervalButton"
+        android:layout_marginTop="5dp" />
+
+    <CheckBox
+        android:id="@+id/apCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/attCheckBox"
+        android:layout_toStartOf="@+id/attCheckBox"
+        android:enabled="false"
+        android:textSize="12sp"
+        android:text="AP" />
+
+    <CheckBox
+        android:id="@+id/attCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:checked="false"
+        android:textSize="12sp"
+        android:text="ATT" />
+
+    <CheckBox
+        android:id="@+id/meCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/medCheckBox"
+        android:layout_alignStart="@+id/apCheckBox"
+        android:enabled="false"
+        android:checked="false"
+        android:textSize="12sp"
+        android:text="ME" />
+
+    <CheckBox
+        android:id="@+id/medCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/attCheckBox"
+        android:layout_alignParentEnd="false"
+        android:layout_alignEnd="@+id/attCheckBox"
+        android:checked="false"
+        android:textSize="12sp"
+        android:text="MED" />
+
+    <CheckBox
+        android:id="@+id/me2CheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/blinkCheckBox"
+        android:layout_alignStart="@+id/apCheckBox"
+        android:enabled="false"
+        android:checked="false"
+        android:textSize="12sp"
+        android:text="ME2" />
+
+    <Button
+        android:id="@+id/setAlgosButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stopButton"
+        android:layout_alignParentEnd="true"
+        android:textSize="12sp"
+        android:text="Set Algos" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:id="@+id/setIntervalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fTitle"
+        android:layout_toStartOf="@+id/intervalSeekBar"
+        android:layout_alignStart="@+id/fTitle"
+        android:enabled="true"
+        android:textSize="12sp"
+        android:text="Interval" />
+
+    <SeekBar
+        android:id="@+id/intervalSeekBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/sqText"
+        android:layout_alignBottom="@+id/setIntervalButton"
+        android:layout_toStartOf="@+id/intervalText"
+        android:layout_toEndOf="@+id/intervalText"
+        android:indeterminate="false"
+        android:max="4" />
+
+    <TextView
+        android:id="@+id/intervalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/intervalSeekBar"
+        android:layout_alignEnd="@+id/include"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="--" />
+
+    <EditText
+        android:id="@+id/myText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/include"
+        android:layout_alignStart="@+id/include"
+        android:layout_alignEnd="@+id/include"
+        android:layout_alignBottom="@+id/include"
+        android:focusable="false"
+        android:inputType="textMultiLine"
+        android:ellipsize="end"
+        android:scrollbars="vertical"
+        android:visibility="invisible"
+        android:ems="10" />
+
+    <CheckBox
+        android:id="@+id/fCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/me2CheckBox"
+        android:layout_below="@+id/me2CheckBox"
+        android:checked="false"
+        android:enabled="false"
+        android:textSize="12sp"
+        android:text="F" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="F2"
+        android:id="@+id/f2CheckBox"
+        android:checked="false"
+        android:textSize="10dp"
+        android:layout_alignLeft="@+id/medCheckBox"
+        android:layout_below="@+id/blinkCheckBox"
+        android:enabled="false" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:text="F"
+        android:id="@+id/fTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_below="@+id/apTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="12dp"
+        android:minHeight="20dp"
+        android:maxHeight="20dp"
+        android:enabled="false" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:text="F2"
+        android:id="@+id/f2Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_above="@+id/setIntervalButton"
+        android:layout_alignLeft="@+id/meTitle"
+        android:layout_alignStart="@+id/meTitle"
+        android:textSize="12dp"
+        android:maxHeight="20dp"
+        android:minHeight="20dp"
+        android:enabled="false" />
+
+    <TextView
+        android:text="Blink"
+        android:id="@+id/blinkTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/setAlgosButton"
+        android:layout_alignParentLeft="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/blinkImage"
+        android:minHeight="20dp"
+        android:minWidth="10dp"
+        android:src="@mipmap/led_off"
+        android:scaleType="fitXY"
+        android:maxHeight="20dp"
+        android:maxWidth="10dp"
+        android:layout_toRightOf="@+id/blinkTitle"
+        android:layout_alignBottom="@+id/blinkTitle"
+        android:layout_alignTop="@+id/setAlgosButton"
+        android:layout_marginTop="10dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blink"
+        android:id="@+id/blinkCheckBox"
+        android:checked="false"
+        android:textSize="10dp"
+        android:layout_below="@+id/medCheckBox"
+        android:layout_alignParentRight="false"
+        android:layout_alignLeft="@+id/medCheckBox" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CR"
+        android:id="@+id/crCheckBox"
+        android:checked="false"
+        android:textSize="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/apCheckBox"
+        android:enabled="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AL"
+        android:id="@+id/alCheckBox"
+        android:checked="false"
+        android:textSize="10dp"
+        android:layout_below="@+id/crCheckBox"
+        android:layout_alignLeft="@+id/crCheckBox"
+        android:enabled="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CP"
+        android:id="@+id/cpCheckBox"
+        android:checked="false"
+        android:textSize="10dp"
+        android:layout_alignLeft="@+id/crCheckBox"
+        android:layout_below="@+id/alCheckBox"
+        android:enabled="false" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:text="CR"
+        android:id="@+id/crTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:textSize="12sp"
+        android:maxHeight="20dp"
+        android:minHeight="20dp"
+        android:layout_toEndOf="@+id/me2Title"
+        android:layout_alignTop="@+id/meTitle"
+        android:layout_marginStart="5dp"
+        android:enabled="false" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:text="AL"
+        android:id="@+id/alTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:textSize="12sp"
+        android:maxHeight="20dp"
+        android:minHeight="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_alignTop="@+id/crTitle"
+        android:layout_toEndOf="@+id/crTitle"
+        android:enabled="false" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:text="CP"
+        android:id="@+id/cpTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:textSize="12dp"
+        android:maxHeight="20dp"
+        android:minHeight="20dp"
+        android:layout_alignTop="@+id/crTitle"
+        android:layout_alignParentRight="false"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/alTitle"
+        android:enabled="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BP"
+        android:id="@+id/bpCheckBox"
+        android:checked="false"
+        android:textSize="10dp"
+        android:layout_alignTop="@+id/fCheckBox"
+        android:layout_alignLeft="@+id/cpCheckBox" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:text="BP"
+        android:id="@+id/bpTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:textSize="12dp"
+        android:maxHeight="20dp"
+        android:minHeight="20dp"
+        android:layout_alignLeft="@+id/me2Title"
+        android:layout_above="@+id/setIntervalButton" />
+
+</RelativeLayout>
