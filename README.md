@@ -1,6 +1,3 @@
-# MindwaveEEGAlgoSample
-Mindwave EEG Algorithm SDK Sample for target API level 28
-
 # Mindwave EEG Tutorial
 
 Target: [Mindwave Mobile 2](https://store.neurosky.com/pages/mindwave)
